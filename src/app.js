@@ -143,14 +143,14 @@ var ScrollingBG = cc.Sprite.extend({
 var Ship = cc.Sprite.extend({
   ctor: function() {
     this._super();
-    this.initWithFile(res.ship_png);
+    this.initWithFile(res.shrimp03_png);
     this.ySpeed = 0; //宇宙船の垂直速度
     //宇宙船を操作するで追加した部分
     this.engineOn = false; //カスタム属性追加　宇宙船のエンジンのON OFF
     this.invulnerability = 0; //無敵モード時間　初期値0
   },
   onEnter: function() {
-    this.setPosition(60, 160);
+    this.setPosition(60, 240);
   },
   updateY: function() {
     //宇宙船を操作するで追加した部分
@@ -174,7 +174,7 @@ var Ship = cc.Sprite.extend({
     this.ySpeed += gameGravity;
 
     //宇宙船が画面外にでたら、リスタートさせる
-    if (this.getPosition().y < 0 || this.getPosition().y > 320) {
+    if (this.getPosition().y < 0 || this.getPosition().y > 480) {
       restartGame();
 
     }
@@ -188,8 +188,8 @@ var Asteroid = cc.Sprite.extend({
   },
   onEnter: function() {
     this._super();
-    this.setPosition(600, Math.random() * 320);
-    var moveAction = cc.MoveTo.create(2.5, new cc.Point(-100, Math.random() * 320));
+    this.setPosition(600, Math.random() * 480);
+    var moveAction = cc.MoveTo.create(2.5, new cc.Point(-100, Math.random() * 480));
     this.runAction(moveAction);
     this.scheduleUpdate();
   },
@@ -220,7 +220,7 @@ var Asteroid = cc.Sprite.extend({
 //宇宙船を元の位置に戻して、宇宙船の変数を初期化する
 function restartGame() {
   ship.ySpeed = 0;
-  ship.setPosition(ship.getPosition().x, 160);
+  ship.setPosition(ship.getPosition().x, 240);
   ship.invulnerability = 100;
   //bgmリスタート
   if (!audioEngine.isMusicPlaying()) {
