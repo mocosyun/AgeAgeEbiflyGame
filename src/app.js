@@ -1,4 +1,4 @@
-//app.js
+/*//app.js
 
 var size;
 
@@ -85,7 +85,8 @@ var game = cc.Layer.extend({
   },
   removeAsteroid: function(asteroid) {
     this.removeChild(asteroid);
-  },
+  },*/
+
   //BGMと効果音の関数を追加
   /*
   playSe: function() {
@@ -114,8 +115,9 @@ var game = cc.Layer.extend({
     this.audioEngine.setEffectsVolume(this.audioEngine.getEffectsVolume() - 0.1);
   }*/
 
-});
+//});
 
+/*
 //スクロール移動する背景クラス
 var ScrollingBG = cc.Sprite.extend({
   //ctorはコンストラクタ　クラスがインスタンスされたときに必ず実行される
@@ -227,3 +229,4 @@ function restartGame() {
     audioEngine.resumeMusic();
   }
 }
+*/
