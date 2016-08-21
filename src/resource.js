@@ -1,11 +1,11 @@
 var res = {
     /*background_png : "res/background.png",
-    ship_png : "res/shrimp03.png",
+    shipmp03_png : "res/shrimp03.png",
     particle_png : "res/wave.png",
-    asteroid_png : "res/nagoya0.png",
+    nagoya0_png : "res/nagoya0.png",
     bgm_main : "res/bgm_piano09.mp3",
     se_bang : "res/se_bang.mp3"*/
-    Title_png: "res/Title.png",
+    title_png: "res/title.png",
     start_png : "res/start.png"
 };
 

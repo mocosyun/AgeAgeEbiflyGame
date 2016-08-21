@@ -1,4 +1,5 @@
-/*//app.js
+/*
+//app.js
 
 var size;
 
@@ -85,8 +86,8 @@ var game = cc.Layer.extend({
   },
   removeAsteroid: function(asteroid) {
     this.removeChild(asteroid);
-  },*/
-
+  },
+*/
   //BGMと効果音の関数を追加
   /*
   playSe: function() {
