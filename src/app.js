@@ -191,11 +191,13 @@ var Asteroid = cc.Sprite.extend({
     }
   }
 });
+
 //宇宙船を元の位置に戻して、宇宙船の変数を初期化する
 function restartGame() {
   ship.ySpeed = 0;
   ship.setPosition(ship.getPosition().x, 160);
   ship.invulnerability = 100;
+
   //bgmリスタート
   if (!audioEngine.isMusicPlaying()) {
     audioEngine.resumeMusic();
