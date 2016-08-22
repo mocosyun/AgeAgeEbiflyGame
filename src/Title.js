@@ -32,7 +32,7 @@ var MyLayer = cc.Layer.extend({
   onTouchMoved: function(touch, event){},
   onTouchEnded: function(touch, event){
     //次のシーンに切り替える
-    cc.director.runScene(new Scene());
+    cc.director.runScene(new gameScene());
   },
 });
 

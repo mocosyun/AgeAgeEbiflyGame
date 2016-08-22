@@ -1,4 +1,4 @@
-/*
+
 //app.js
 
 var size;
@@ -30,7 +30,7 @@ var gameScene = cc.Scene.extend({
     //bgm再生
     if (!audioEngine.isMusicPlaying()) {
       //audioEngine.playMusic("res/bgm_main.mp3", true);
-      audioEngine.playMusic(res.bgm_main, true);
+      //audioEngine.playMusic(res.bgm_main, true);
     }
   },
 
@@ -68,7 +68,7 @@ var game = cc.Layer.extend({
     //ここからパーティクルの設定
     emitter = cc.ParticleSun.create();
     this.addChild(emitter, 1);
-    var myTexture = cc.textureCache.addImage(res.particle_png);
+    var myTexture = cc.textureCache.addImage(res.nagoya0_png);
     emitter.setTexture(myTexture);
     emitter.setStartSize(2);
     emitter.setEndSize(4);
@@ -87,38 +87,9 @@ var game = cc.Layer.extend({
   removeAsteroid: function(asteroid) {
     this.removeChild(asteroid);
   },
-*/
-  //BGMと効果音の関数を追加
-  /*
-  playSe: function() {
-    this.audioEngine.playEffect(res.se_surprize);
-  },
-  playBgm: function() {
-    if (!this.audioEngine.isMusicPlaying()) {
-      this.audioEngine.playMusic(res.bgm_main, true);
-    }
-  },
-  stopBgm: function() {
-    if (this.audioEngine.isMusicPlaying()) {
-      this.audioEngine.stopMusic();
-    }
-  },
-  bgmUp: function() {
-    this.audioEngine.setMusicVolume(this.audioEngine.getMusicVolume() + 0.1);
-  },
-  bgmDown: function() {
-    this.audioEngine.setMusicVolume(this.audioEngine.getMusicVolume() - 0.1);
-  },
-  seUp: function() {
-    this.audioEngine.setEffectsVolume(this.audioEngine.getEffectsVolume() + 0.1);
-  },
-  seDown: function() {
-    this.audioEngine.setEffectsVolume(this.audioEngine.getEffectsVolume() - 0.1);
-  }*/
 
-//});
+});
 
-/*
 //スクロール移動する背景クラス
 var ScrollingBG = cc.Sprite.extend({
   //ctorはコンストラクタ　クラスがインスタンスされたときに必ず実行される
@@ -137,7 +108,7 @@ var ScrollingBG = cc.Sprite.extend({
     this.setPosition(this.getPosition().x - scrollSpeed, this.getPosition().y);
     //画面の端に到達したら反対側の座標にする
     if (this.getPosition().x < 0) {
-      this.setPosition(this.getPosition().x + 380, this.getPosition().y);
+      this.setPosition(this.getPosition().x + 50, this.getPosition().y);
     }
   }
 });
@@ -146,7 +117,7 @@ var ScrollingBG = cc.Sprite.extend({
 var Ship = cc.Sprite.extend({
   ctor: function() {
     this._super();
-    this.initWithFile(res.ship_png);
+    this.initWithFile(res.shipmp03_png);
     this.ySpeed = 0; //宇宙船の垂直速度
     //宇宙船を操作するで追加した部分
     this.engineOn = false; //カスタム属性追加　宇宙船のエンジンのON OFF
@@ -187,7 +158,7 @@ var Ship = cc.Sprite.extend({
 var Asteroid = cc.Sprite.extend({
   ctor: function() {
     this._super();
-    this.initWithFile(res.asteroid_png);
+    this.initWithFile(res.nagoya0_png);
   },
   onEnter: function() {
     this._super();
@@ -207,7 +178,7 @@ var Asteroid = cc.Sprite.extend({
       audioEngine.setEffectsVolume(audioEngine.getEffectsVolume() + 0.3);
       //効果音を再生する
     //  audioEngine.playEffect("res/se_bang.mp3");
-      audioEngine.playEffect(res.se_bang);
+      //audioEngine.playEffect(res.se_bang);
       //bgmの再生をとめる
       if (audioEngine.isMusicPlaying()) {
         audioEngine.stopMusic();
@@ -230,4 +201,3 @@ function restartGame() {
     audioEngine.resumeMusic();
   }
 }
-*/
