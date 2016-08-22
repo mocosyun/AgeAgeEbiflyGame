@@ -137,7 +137,7 @@ var ScrollingBG = cc.Sprite.extend({
     this.setPosition(this.getPosition().x - scrollSpeed, this.getPosition().y);
     //画面の端に到達したら反対側の座標にする
     if (this.getPosition().x < 0) {
-      this.setPosition(this.getPosition().x + 480, this.getPosition().y);
+      this.setPosition(this.getPosition().x + 380, this.getPosition().y);
     }
   }
 });

@@ -13,7 +13,7 @@ var MyLayer = cc.Layer.extend({
     title_png.setPosition(size.width / 2, size.height / 2 + 50);
     this.addChild(title_png);
     //add convertToNodeSpace
-/*
+
     // タップイベントリスナーを登録する
     cc.eventManager.addListener({
         event: cc.EventListener.TOUCH_ONE_BY_ONE,
@@ -22,23 +22,28 @@ var MyLayer = cc.Layer.extend({
         onTouchMoved: this.onTouchMoved,
         onTouchEnded: this.onTouchEnded
       }, this);
-*/
+
     return true;
   },
 
-/*  onTouchBegan: function(touch, event) {
+  onTouchBegan: function(touch, event) {
     return true;
   },
   onTouchMoved: function(touch, event){},
   onTouchEnded: function(touch, event){
     //次のシーンに切り替える
     cc.director.runScene(new Scene());
-  },*/
+  },
 });
 
 var MyScene = cc.Scene.extend({
   onEnter: function() {
     this._super();
+
+    // 背景レイヤーをその場で作る
+    var backgroundLayer = new cc.LayerColor(new cc.Color(0, 150, 100, 228));
+    this.addChild(backgroundLayer);
+    //ラベルとタップイベント取得
     var layer = new MyLayer();
     this.addChild(layer);
   }
